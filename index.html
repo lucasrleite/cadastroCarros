@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros</title>
+    <link href="estilo.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/262aa4df9a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="menu">
+        <div class="item">
+            <a class="ativo" href="#">Carros</a>
+        </div>
+        <div class="dark-swi">
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+                </label>
+            </div><br>
+        </div>
+            
+                
+        
+            
+        
+        
+    </div>
+    
+    <form>
+        <div class="form">
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="codigo">Codigo</label>
+                    <input type="number" name="codigo" disabled id="codigo" placeholder="Digite:" />
+                </div>
+                <div class="form-col">
+                    <label for="nomeCarro">Nome do carro</label>
+                    <input type="text" name="nomeCarro" id="nomeCarro" required placeholder="Digite:" />
+                </div>
+                <div class="form-col">
+                    <label for="nomeFab">Nome do Fabricante</label>
+                    <input type="text" name="nomeFab" id="nomeFab" required placeholder="Digite:" />
+                </div>
+                <div class="form-col">
+                    <label for="anoCarro">Ano do carro</label>
+                    <input type="number" name="anoCarro" id="anoCarro" required placeholder="Digite:" />
+                </div>
+                <div class="form-col">
+                    <label for="nome">Cambio</label>
+                    <select type="text"  min="1900" max="2099" required  step="1" value="2016" name="cambio" id="cambio" placeholder="Digite:" >
+                        <option value="Manual">Manual</option>
+                        <option value="Automatico">Automatico</option>
+                    </select>
+
+                </div>
+                
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <a id="salvar">Salvar Registro</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </form>
+    
+    <div id="listagem"></div>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="carro.js"></script> 
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark'); //add this
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light'); //add this
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>
