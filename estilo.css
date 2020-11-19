@@ -95,11 +95,24 @@ select{
   width: 100%;
   font-family: 'Nunito', sans-serif;
 }
+#edit{
+  
+  text-decoration: none;
+  color: #fff;
+  border-radius: .2rem;
+  padding: 10px;
+  background-color: #5d5dff;
+  flex: 1;
+  cursor: pointer;
+  height: 40px;
+}
 
-.form-row a{
+
+#salvar{
+  height: 40px;
   display: block;
   text-decoration: none;
-  color: #cdcdcd;
+  color: #fff;
   border-radius: .2rem;
   padding: 10px;
   background-color: green;

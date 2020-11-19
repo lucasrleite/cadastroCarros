@@ -9,6 +9,7 @@ class Carro {
         //o registro está sendo editado?
         if(document.getElementById('codigo').getAttribute('disabled')==='disabled'){
             this.apaga(carro.codigo)
+            console.log("asd")
         }
         this.carros.push(carro) //adiciona um novo elemento ao array
         localStorage.setItem('tableCarros', JSON.stringify(this.carros))
@@ -17,6 +18,7 @@ class Carro {
             'Foi inserido com sucesso.',
             'success'
         )
+        document.getElementById('edit').setAttribute('style','display:none')
         
     }
 
@@ -43,12 +45,15 @@ class Carro {
                 )
                 carro.atualiza()
                 carro.atualizaId()
+                document.getElementById('edit').setAttribute('style','display:none')
             }
           })
         
     }
 
     edita(carro){
+        document.getElementById('salvar').setAttribute('style','display:none')
+        document.getElementById('edit').setAttribute('style','display:block')
         document.getElementById('codigo').setAttribute('disabled','disabled')
         document.getElementById('codigo').value = carro.codigo
         document.getElementById('nomeCarro').value = carro.nome
@@ -121,6 +126,30 @@ document.getElementById('salvar').onclick = function ()  {
     }
     if(!!registro.codigo && !!registro.nome && !!registro.nomeFab && !!registro.anoCarro && !!cambio){
         carro.salva(registro)
+        updateAll()
+    }else{
+        Swal.fire(
+            'Atenção',
+            'Algum dos campos está vazio!',
+            'warning'
+          )
+    }
+    
+}
+
+document.getElementById('edit').onclick = function ()  {
+    const registro = {
+        codigo: document.getElementById('codigo').value,
+        nome: document.getElementById('nomeCarro').value,
+        nomeFab: document.getElementById('nomeFab').value,
+        anoCarro: document.getElementById('anoCarro').value,
+        cambio: document.getElementById('cambio').value,
+    }
+    if(!!registro.codigo && !!registro.nome && !!registro.nomeFab && !!registro.anoCarro && !!cambio){
+        carro.salva(registro)
+        document.getElementById('salvar').setAttribute('style','display:block')
+        document.getElementById('editar').setAttribute('style','display:none')
+
         updateAll()
     }else{
         Swal.fire(
