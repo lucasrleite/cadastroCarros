@@ -12,16 +12,18 @@
 
 </div>
 <h1 >Projeto</h1>
-<li>Cadastro
-<li>Listagem
-<li>Exclusão
-<li>Edição
-<li>Dark Mode
-<li>Alertas
-
+<ul>
+  <li>Cadastro</li>
+<li>Listagem</li>
+<li>Exclusão</li>
+<li>Edição</li>
+<li>Dark Mode</li>
+<li>Alertas</li>
+</ul>
 <div>
 <h4>Bibliotecas utilizadas</h4>
-  <a href="https://sweetalert2.github.io/">SweetAlerts</a><br>
-  <a href="https://getbootstrap.com/">Bootstrap</a>
-
+  <ul>
+  <li><a href="https://sweetalert2.github.io/">SweetAlerts</a><br></li>
+  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+  </ul>
 </div>
