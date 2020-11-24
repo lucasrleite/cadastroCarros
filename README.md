@@ -6,9 +6,8 @@
 ----
 <h3 align="center"> ️Desenvolvedores</h1>
 <div align="center>
-| <img src="https://avatars2.githubusercontent.com/u/49835617?s=460&u=5ff7b08380f4e61c157e891931a0e2056a40fad2&v=4" width="50"> | <img src="https://avatars2.githubusercontent.com/u/73672670?s=460&u=cba01b07c5547b237f55cefd09f6e3cc98fc52de&v=4"> |
-|--|--|
-| Lucas Leite |  Junior Lima|
+| [<img src="https://avatars2.githubusercontent.com/u/49835617?s=460&u=5ff7b08380f4e61c157e891931a0e2056a40fad2&v=4" width="100px;"/><br /><sub><b>Lucas Leite</b></sub>](http://juandavidherrera.com/en)<br  /> | [<img src="https://avatars2.githubusercontent.com/u/73672670?s=460&u=cba01b07c5547b237f55cefd09f6e3cc98fc52de&v=4" width="100px;"/><br /><sub><b>Junior Lima</b></sub>](http://co.linkedin.com/in/alejandronanez/)<br  />
+
 
 </div>
 <h1 >Projeto</h1>
