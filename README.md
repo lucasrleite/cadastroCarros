@@ -21,6 +21,7 @@
 
 <div>
 <h4>Bibliotecas utilizadas</h4>
-[SweetAlerts](https://sweetalert2.github.io/)<br>
-[Bootstrap](https://getbootstrap.com/)
+  <a href="https://sweetalert2.github.io/">SweetAlerts</a><br>
+  <a href="https://getbootstrap.com/">Bootstrap</a>
+
 </div>
