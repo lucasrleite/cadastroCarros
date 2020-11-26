@@ -7,10 +7,7 @@ class Carro {
 
     salva(carro){
         //o registro está sendo editado?
-        if(document.getElementById('codigo').getAttribute('disabled')==='disabled'){
-            this.apaga(carro.codigo)
-            console.log("asd")
-        }
+        
         this.carros.push(carro) //adiciona um novo elemento ao array
         localStorage.setItem('tableCarros', JSON.stringify(this.carros))
         Swal.fire(
@@ -21,10 +18,24 @@ class Carro {
         document.getElementById('edit').setAttribute('style','display:none')
         
     }
+    edit(carro){
+        let index = this.carros.findIndex(car => car.codigo == carro.codigo)
+        this.carros.splice(index, 1) //index é o elemento do array
+        //salvamos a alteração
+        localStorage.setItem('tableCarros',JSON.stringify(this.carros))
+        this.carros.push(carro) //adiciona um novo elemento ao array
+        localStorage.setItem('tableCarros', JSON.stringify(this.carros))
+        Swal.fire(
+            'Editado!!',
+            'Foi editado com sucesso.',
+            'success'
+        )
+        document.getElementById('edit').setAttribute('style','display:none')
+    }
 
     apaga(codigo){
         
-        Swal.fire({
+        Swal.fire({                                                             
             title: 'Tem certeza?',
             text: "Você está prestes a excluir um registro!",
             icon: 'warning',
@@ -35,13 +46,14 @@ class Carro {
           }).then((result) => {
             if (result.isConfirmed) {
                 let index = this.carros.findIndex(carro => carro.codigo == codigo)
+                
                 this.carros.splice(index, 1) //index é o elemento do array
                 //salvamos a alteração
                 localStorage.setItem('tableCarros',JSON.stringify(this.carros))
                 Swal.fire(
                     'Deletado!',
                     'Foi deletado com sucesso.',
-                    'success'
+                    'error'
                 )
                 carro.atualiza()
                 carro.atualizaId()
@@ -50,7 +62,7 @@ class Carro {
           })
         
     }
-
+    
     edita(carro){
         document.getElementById('salvar').setAttribute('style','display:none')
         document.getElementById('edit').setAttribute('style','display:block')
@@ -146,7 +158,7 @@ document.getElementById('edit').onclick = function ()  {
         cambio: document.getElementById('cambio').value,
     }
     if(!!registro.codigo && !!registro.nome && !!registro.nomeFab && !!registro.anoCarro && !!cambio){
-        carro.salva(registro)
+        carro.edit(registro)
         document.getElementById('salvar').setAttribute('style','display:block')
         document.getElementById('editar').setAttribute('style','display:none')
 
